@@ -3,6 +3,7 @@ package com.mcmaximilian.Phantazam;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -25,16 +26,24 @@ public class EventListener {
                     net.minecraft.network.chat.Component component = Component.nullToEmpty("Cornering is off!");
                     component.getStyle().withColor(ChatFormatting.YELLOW);
                     component.getStyle().withBold( true);
-                    Objects.requireNonNull(Minecraft.getInstance().player).displayClientMessage( component, true);
+                    Objects.requireNonNull(Minecraft.getInstance().player).sendSystemMessage(component);
                 }
                 else if ( CorneringState.equalsIgnoreCase("off")) {
                     CorneringState = "on";
                     net.minecraft.network.chat.Component component = Component.nullToEmpty("Cornering is on!");
                     component.getStyle().withColor(ChatFormatting.YELLOW);
                     component.getStyle().withBold( true);
-                    Objects.requireNonNull(Minecraft.getInstance().player).displayClientMessage( component, true);
+                    Objects.requireNonNull(Minecraft.getInstance().player).sendSystemMessage(component);
                 }
             }
+        }
+    }
+
+    @SuppressWarnings("rawtypes")
+    @SubscribeEvent
+    public static void onCheckPlayers( RenderPlayerEvent event) {
+        if ( CorneringState.equalsIgnoreCase("on")) {
+            event.setCanceled(true);
         }
     }
 }

@@ -6,9 +6,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class Keybinds {
 
-    public static KeyMapping ToggleCornering = new KeyMapping("Toggle Cornering", 90, "Phantazm Mod");
+    public static KeyMapping ToggleCornering = new KeyMapping("key,Toggle_Cornering", 90, "key.Phantazm_Mod");
 
-    public static String CorneringState = "";
+    public static String CorneringState = "off";
 
     @SubscribeEvent
     public static void registerKey(RegisterKeyMappingsEvent event) {
