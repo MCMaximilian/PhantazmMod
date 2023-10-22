@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import static com.mcmaximilian.Phantazam.Utils.Keybinds.*;
 
-public class KeyWork {
+public class KeyPress {
     private static final Player clientPlayer = Minecraft.getInstance().player;
 
     @Mod.EventBusSubscriber( modid = Main.MODID, value = Dist.CLIENT)
