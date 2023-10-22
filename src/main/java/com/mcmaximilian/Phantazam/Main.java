@@ -21,13 +21,8 @@ public class Main
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
-        //TODO: Default Setting of mod
 
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(Keybinds::registerKey);
-        MinecraftForge.EVENT_BUS.addListener(EventListener::onKeyInput);
-        MinecraftForge.EVENT_BUS.addListener(EventListener::onCheckPlayers);
-        //TODO: Event Listener List
 
 
     }
