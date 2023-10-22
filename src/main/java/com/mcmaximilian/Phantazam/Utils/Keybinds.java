@@ -1,5 +1,6 @@
-package com.mcmaximilian.Phantazam;
+package com.mcmaximilian.Phantazam.Utils;
 
+import com.mcmaximilian.Phantazam.Main;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
 import net.minecraftforge.api.distmarker.Dist;
@@ -14,10 +15,13 @@ public class Keybinds {
     private static final String Category  = "key.category.phantazmmod.PhantazmMod";
 
     private static final String Cornering = "key.phantazmmod.toggle_cornering";
+    private static final String DPSCounter = "key.phantazmmod.toggle_DPSCounter";
 
     public static final KeyMapping ToggleCornering  = new KeyMapping(Cornering, KeyConflictContext.IN_GAME, InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_Z , Category );
+    public static final KeyMapping ToggleDPSCounter = new KeyMapping( DPSCounter, KeyConflictContext.IN_GAME, InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_X, Category);
 
     public static String CorneringState = "off";
+    public static String DPSCounterState = "off";
 
     @Mod.EventBusSubscriber( modid = Main.MODID , value = Dist.CLIENT)
     public static class KeyGenerate {
@@ -25,6 +29,7 @@ public class Keybinds {
         @SubscribeEvent
         public static void registerKey(RegisterKeyMappingsEvent event) {
             event.register( ToggleCornering);
+            event.register( ToggleDPSCounter);
         }
     }
 
@@ -34,6 +39,7 @@ public class Keybinds {
         @SubscribeEvent
         public static void fixKey( RegisterKeyMappingsEvent event) {
             event.register( ToggleCornering );
+            event.register( ToggleDPSCounter);
         }
     }
 

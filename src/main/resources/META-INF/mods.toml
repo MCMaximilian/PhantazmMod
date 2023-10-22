@@ -1,10 +1,11 @@
 modLoader="javafml"
 loaderVersion="[41,)"
 license="All rights reserved"
+# If you want to copy this code, please write author's name in description page or something others.
 [[mods]]
 modId="phantazmmod"
 version="1.0"
-displayName="PhantazmMod" #mandatory
+displayName="PhantazmMod"
 authors="MCMaximilian"
 # I copied syeyoun( cyoung06's code )
 # Cyoung06's Github: https://github.com/cyoung06/ZombiesCorneringMod
