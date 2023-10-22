@@ -41,20 +41,6 @@ public class KeyPress {
                     }
                 }
                 //TODO: Toggle Cornering
-
-                else if ( ToggleDPSCounter.consumeClick() ) {
-                    if ( DPSCounterState.equalsIgnoreCase("on")) {
-                        DPSCounterState = "off";
-                        Component component = Component.nullToEmpty("DPS Counter is off!");
-                        clientPlayer.sendSystemMessage(component);
-                    }
-                    else if ( DPSCounterState.equalsIgnoreCase("off")) {
-                        DPSCounterState = "on";
-                        Component component = Component.nullToEmpty("DPS Counter is on!");
-                        clientPlayer.sendSystemMessage(component);
-                    }
-                }
-                //TODO: Toggle DPS Counter
             }
         }
         //TODO: Toggle Keybinding
